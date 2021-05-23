@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     EditText password;
     EditText name;
     EditText id;
+    ProgressBar progressbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +30,16 @@ public class MainActivity extends AppCompatActivity {
         password=findViewById(R.id.password);
         name=findViewById(R.id.name);
         id=findViewById(R.id.id);
+        progressbar=findViewById(R.id.progressBar);
 
     }
 
     public void Registro(View view){
 
+        progressbar.setVisibility(View.VISIBLE);
         Intent intent = new Intent(this, DashboardActivity.class);
-
-
         usuario usuario = new usuario(id.getText().toString(), name.getText().toString(), username.getText().toString(), password.getText().toString());
         Call<com.example.login.usuario> call = ApiClient.getUserService().Registro(usuario);
-
         call.enqueue(new Callback<com.example.login.usuario>() {
             @Override
             public void onResponse(Call<com.example.login.usuario> call, Response<com.example.login.usuario> response) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.code() ==201)
                 {
                     startActivity(intent);
+                    progressbar.setVisibility(View.INVISIBLE);
                 }
             }
 
