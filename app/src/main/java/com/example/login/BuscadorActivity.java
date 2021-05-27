@@ -13,13 +13,13 @@ import retrofit2.Response;
 
 public class BuscadorActivity extends AppCompatActivity {
 
-TextView id;
+TextView correo;
+TextView apodo;
 TextView nombre;
-TextView username;
-TextView password;
+TextView apellido;
 
 
-EditText identificador;
+EditText apodoBuscador;
 
 
     @Override
@@ -27,32 +27,33 @@ EditText identificador;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscador);
 
-        id=findViewById(R.id.idBuscador);
-        nombre=findViewById(R.id.nombre);
-        username=findViewById(R.id.apellido);
-        password=findViewById(R.id.passwordBuscador);
+        correo=findViewById(R.id.correoResultado);
+        apodo=findViewById(R.id.apodoResultado);
+        nombre=findViewById(R.id.nombreResultado);
+        apellido=findViewById(R.id.apellidoRes);
 
-        identificador=findViewById(R.id.identificador);
+        apodoBuscador=findViewById(R.id.apodoBuscador);
 
     }
 
     public void Buscador (View view){
-        Call<usuario> call = ApiClient.getUserService().getUsuario(identificador.getText().toString());
+        Call<Usuario> call = ApiClient.getUserService().getUsuario(apodoBuscador.getText().toString());
 
-        call.enqueue(new Callback<usuario>() {
+        call.enqueue(new Callback<Usuario>() {
             @Override
-            public void onResponse(Call<usuario> call, Response<usuario> response) {
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if(response.code()==201){
 
-                    id.setText(response.body().getIdUser());
+                    correo.setText(response.body().getCorreo());
+                    apodo.setText(response.body().getApodo());
                     nombre.setText(response.body().getNombre());
-                    username.setText(response.body().getApellido());
-                    password.setText(response.body().getPassword());
+                    apellido.setText(response.body().getApellido());
+
                 }
             }
 
             @Override
-            public void onFailure(Call<usuario> call, Throwable t) {
+            public void onFailure(Call<Usuario> call, Throwable t) {
 
             }
         });

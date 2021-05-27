@@ -2,38 +2,54 @@ package com.example.login;
 
 import java.io.Serializable;
 
-public class usuario implements Serializable {
-    String idUser;
-    String nombre;
-    String apellido;
-    String password;
+public class Usuario implements Serializable {
+    String correo;
+    String apodo;//2
+    String nombre;//3
+    String apellido; //4
+    String password; //5
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "idUser='" + idUser + '\'' +
+        return "usuario{" +
+                "correo='" + correo + '\'' +
+                ", apodo='" + apodo + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
 
-    public usuario() {
+    public Usuario() {
     }
 
-    public usuario(String idUser, String nombre, String apellido, String password) {
-        this.idUser = idUser;
+    public Usuario(String correo, String apodo, String nombre, String apellido, String password) {
+        this.correo = correo;
+        this.apodo = apodo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.password = password;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public Usuario(String apodo, String password) {
+        this.apodo = apodo;
+        this.password = password;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getApodo() {
+        return apodo;
+    }
+
+    public void setApodo(String apodo) {
+        this.apodo = apodo;
     }
 
     public String getNombre() {

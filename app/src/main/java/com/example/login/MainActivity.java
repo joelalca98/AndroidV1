@@ -15,10 +15,11 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText username;
-    EditText password;
+    EditText correo;
+    EditText apodo;
     EditText name;
-    EditText id;
+    EditText apellido;
+    EditText password;
     ProgressBar progressbar;
 
     @Override
@@ -26,25 +27,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username=findViewById(R.id.username);
-        password=findViewById(R.id.password);
-        name=findViewById(R.id.name);
-        id=findViewById(R.id.id);
+
+        correo=findViewById(R.id.correoRegistro);
+        apodo=findViewById(R.id.apodoRegistro);
+        name=findViewById(R.id.nombreRegistro);
+        apellido=findViewById(R.id.apellidoRegistro);
+        password=findViewById(R.id.passwordRegistro);
         progressbar=findViewById(R.id.progressBar);
 
     }
 
-    public void Registro(View view){
+    public void registro(View view){
 
         progressbar.setVisibility(View.VISIBLE);
         Intent intent = new Intent(this, DashboardActivity.class);
-        usuario usuario = new usuario(id.getText().toString(), name.getText().toString(), username.getText().toString(), password.getText().toString());
-        Call<com.example.login.usuario> call = ApiClient.getUserService().Registro(usuario);
-        call.enqueue(new Callback<com.example.login.usuario>() {
+        Usuario usuario = new Usuario(correo.getText().toString(), apodo.getText().toString(), name.getText().toString(), apellido.getText().toString(), password.getText().toString());
+        Call<Usuario> call = ApiClient.getUserService().Registro(usuario);
+        call.enqueue(new Callback<Usuario>() {
             @Override
-            public void onResponse(Call<com.example.login.usuario> call, Response<com.example.login.usuario> response) {
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 Log.i("G4", "Codico del servidor \n"+ response.code());
-                com.example.login.usuario usuarioServidor = response.body();
+                Usuario usuarioServidor = response.body();
                 Log.i("G4","El objeto que me envia el servidor es\n" + usuarioServidor);
                 if (response.code() ==201)
                 {
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<com.example.login.usuario> call, Throwable t) {
+            public void onFailure(Call<Usuario> call, Throwable t) {
 
             }
         });

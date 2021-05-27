@@ -15,9 +15,10 @@ import retrofit2.Response;
 
 public class EditarActivity extends AppCompatActivity {
 
-    EditText idActualizar;
+    EditText correo;
+    EditText apodo;
     EditText nombre;
-    EditText username;
+    EditText apellido;
     EditText password;
 
     TextView idEliminar;
@@ -27,17 +28,18 @@ public class EditarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar);
 
-        idActualizar=findViewById(R.id.idActualizar);
+        correo=findViewById(R.id.correoActualizar);
+        apodo=findViewById(R.id.apodoActualizar);
         nombre=findViewById(R.id.nombreActualizar);
-        username=findViewById(R.id.usernameActualizar);
-        password=findViewById(R.id.passwordActualizar);
+        apellido=findViewById(R.id.apellidoActualizar);
+        password=findViewById(R.id.contraseñaActualizar);
 
-        idEliminar=findViewById(R.id.idEliminar);
+        idEliminar=findViewById(R.id.apodoEliminar);
 
     }
 
     public void Actualizar (View view) {
-        usuario usuario = new usuario(idActualizar.getText().toString(), nombre.getText().toString(), username.getText().toString(), password.getText().toString());
+        Usuario usuario = new Usuario(correo.getText().toString(), apodo.getText().toString(), nombre.getText().toString(), apellido.getText().toString(), password.getText().toString());
         Call <Void> call = ApiClient.getUserService().Actualizar(usuario);
         call.enqueue(new Callback<Void>() {
             @Override

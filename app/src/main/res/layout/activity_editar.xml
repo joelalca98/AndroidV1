@@ -7,7 +7,7 @@
     tools:context=".EditarActivity">
 
     <EditText
-        android:id="@+id/idEliminar"
+        android:id="@+id/apodoEliminar"
         android:layout_width="160dp"
         android:layout_height="39dp"
         android:layout_marginTop="488dp"
@@ -15,16 +15,16 @@
         android:layout_marginRight="212dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="id"
+        android:hint="apodo"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/passwordActualizar"
+        android:id="@+id/contraseñaActualizar"
         android:layout_width="160dp"
         android:layout_height="39dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="220dp"
         android:layout_marginRight="220dp"
         android:ems="10"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/usernameActualizar"
+        android:id="@+id/nombreActualizar"
         android:layout_width="160dp"
         android:layout_height="39dp"
         android:layout_marginTop="180dp"
@@ -43,13 +43,27 @@
         android:layout_marginRight="220dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="username"
+        android:hint="nombre"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nombreActualizar"
+        android:id="@+id/apellidoActualizar"
+        android:layout_width="160dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginRight="220dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="apellido"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/apodoActualizar"
         android:layout_width="160dp"
         android:layout_height="39dp"
         android:layout_marginTop="124dp"
@@ -57,7 +71,7 @@
         android:layout_marginRight="220dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="nombre"
+        android:hint="apodo"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +101,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/idActualizar"
+        android:id="@+id/correoActualizar"
         android:layout_width="160dp"
         android:layout_height="39dp"
         android:layout_marginTop="68dp"
@@ -95,7 +109,7 @@
         android:layout_marginRight="220dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="id"
+        android:hint="correo"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

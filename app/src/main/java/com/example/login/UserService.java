@@ -11,15 +11,18 @@ import retrofit2.http.Path;
 public interface UserService {
 
     @POST("user/")
-    Call<usuario> Registro (@Body usuario usuario);
+    Call<Usuario> Registro (@Body Usuario usuario);
 
-    @GET("user/{id}")
-    Call<usuario> getUsuario (@Path("id") String id);
+    @GET("user/{apodo}")
+    Call<Usuario> getUsuario (@Path("apodo") String apodo);
 
-    @DELETE("user/{id}")
-    Call<Void>  Eliminar (@Path("id") String id);
+    @DELETE("user/{apodo}")
+    Call<Void>  Eliminar (@Path("apodo") String apodo);
 
     @PUT("user/")
-    Call<Void> Actualizar(@Body usuario usuario);
+    Call<Void> Actualizar (@Body Usuario usuario);
+
+    @POST("user/login")
+    Call<Usuario> Login (@Body Usuario usuario);
 
 }
