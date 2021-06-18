@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".LoginActivity">
 
     <Button
@@ -30,39 +31,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="117dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
-        android:gravity="center"
-        android:text="Apodo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/passwordLogin"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondodashboard" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="111dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:gravity="center"
+        android:text="Apodo"
+        android:textColor="#F6F6F6"
+        android:textSize="20sp"
+        android:textStyle="normal|bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="117dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="252dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
+        android:layout_width="111dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
         android:gravity="center"
         android:text="Contraseña"
+        android:textColor="#F6F6F6"
+        android:textSize="20sp"
+        android:textStyle="normal|bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,23 +73,61 @@
         android:id="@+id/apodoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginRight="116dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
         android:ems="10"
+        android:gravity="center"
+        android:hint="Apodo"
         android:inputType="textPersonName"
+        android:textColor="#FAF9F9"
+        android:textColorHighlight="#EFEEEE"
+        android:textColorHint="#F6F5F5"
+        android:textColorLink="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/passwordLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="404dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#FBFBFB"
+        android:textColorHint="#FDF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="340dp"
         android:layout_marginEnd="192dp"
         android:layout_marginRight="192dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="300dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginBottom="80dp"
+        android:gravity="center"
+        android:text="GALACTIC ADVENTURE"
+        android:textColor="#F8F6F6"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

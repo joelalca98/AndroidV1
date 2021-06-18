@@ -28,4 +28,14 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(this,EditarActivity.class);
         startActivity(intent);
     }
+
+    public void Tienda (View view){
+        Intent intent = new Intent(this,TiendaActivity.class);
+        startActivity(intent);
+    }
+
+    public void Historial (View view){
+        Intent intent = new Intent(this, HistorialActivity.class);
+        startActivity(intent);
+    }
 }
