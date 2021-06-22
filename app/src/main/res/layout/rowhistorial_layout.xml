@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,20 +13,7 @@
         <RelativeLayout
             android:layout_width="50dp"
             android:layout_height="50dp"
-            >
-
-            <ImageView
-
-                android:id="@+id/icon"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="10dp"
-                android:src="@mipmap/ic_launcher" />
-
-
-        </RelativeLayout>
+            />
 
 
         <TextView
@@ -37,26 +25,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginLeft="60dp"
             android:text="arma"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/pagoRow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="60dp"
-
-            android:layout_marginLeft="60dp"
-            android:layout_toRightOf="@+id/armaRow"
-            android:text="pago"
-            android:textColor="@color/black" />
-
-
-
-
-
-
-
+            android:textColor="@color/white" />
 
 
     </RelativeLayout>

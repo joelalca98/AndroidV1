@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -30,23 +31,28 @@ public class HistorialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historial);
         apodoText = findViewById(R.id.apodoText);
         recyclerView = findViewById(R.id.recyclerview);
+
         recyclerView.setAdapter(myAdapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
+        Bundle recibo = getIntent().getExtras();
+        correo = recibo.getString("correo");
+        //Intent intent = getIntent();
+        //correo = intent.getStringExtra("correo");
+        historial();
 
 
 
     }
 
-    public void Historial (View view){
+    public void historial(){
         Call<List<Compra_arma>> call = ApiClient.getUserService().ListaComprada(correo);
         call.enqueue(new Callback<List<Compra_arma>>() {
             @Override
             public void onResponse(Call<List<Compra_arma>> call, Response<List<Compra_arma>> response) {
                 List<Compra_arma> compra_armas = response.body();
-                myAdapter = new HistorialAdapter();
+               myAdapter = new HistorialAdapter();
                 myAdapter.setData(compra_armas);
                 recyclerView.setAdapter(myAdapter);
             }

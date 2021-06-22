@@ -37,10 +37,10 @@ public class HistorialAdapter extends RecyclerView.Adapter<HistorialAdapter.View
 
         Compra_arma compra_arma = armasCompradas.get(position);
         String arma = compra_arma.getNombre_arma();
-        String precio = compra_arma.getForma_pago();
+
 
         holder.arma.setText(arma);
-        holder.precio.setText(precio);
+
 
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -51,7 +51,7 @@ public class HistorialAdapter extends RecyclerView.Adapter<HistorialAdapter.View
             super(itemView);
             layout = itemView;
             arma = itemView.findViewById(R.id.armaRow);
-            precio = itemView.findViewById(R.id.pagoRow);
+
 
         }
     }

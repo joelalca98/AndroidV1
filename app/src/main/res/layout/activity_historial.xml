@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".HistorialActivity">
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_marginRight="96dp"
         android:gravity="center"
         android:text="Lista de armas compradas"
+        android:textColor="#F8F5F5"
         android:textColorHighlight="#00BCD4"
         android:textColorLink="#FFFFFF"
         android:textSize="24sp"
@@ -24,21 +26,32 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="407dp"
-        android:layout_height="367dp"
+        android:layout_width="406dp"
+        android:layout_height="421dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/apodoText" />
 
     <TextView
         android:id="@+id/apodoText"
         android:layout_width="87dp"
         android:layout_height="36dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="175dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/moodificar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
