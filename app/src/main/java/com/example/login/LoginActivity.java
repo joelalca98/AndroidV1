@@ -11,12 +11,14 @@ import android.widget.ProgressBar;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import com.example.login.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText apodo;
     EditText pass;
     ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +39,17 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DashboardActivity.class);
         Usuario usuario = new Usuario(apodo.getText().toString(), pass.getText().toString());
         Call<Usuario> call = ApiClient.getUserService().Login(usuario);
+        Bundle bundle  = new Bundle();
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if (response.code()==201){
+
+                   Usuario usuario = new Usuario();
+
+                    bundle.putSerializable("correo", response.body().correo );
+                    bundle.putSerializable("apodo", response.body().apodo);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                     progressBar.setVisibility(View.INVISIBLE);
                 }

@@ -16,7 +16,7 @@
         android:layout_marginRight="220dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="apodo"
+        android:hint="Introduce correo"
         android:inputType="textPersonName"
         android:textColor="#FDFCFC"
         android:textColorHint="#FDFCFC"

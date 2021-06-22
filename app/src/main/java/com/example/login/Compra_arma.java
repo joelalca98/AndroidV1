@@ -15,7 +15,7 @@ public class Compra_arma implements Serializable {
         this.correo_usuario = correo_usuario;
         this.nombre_arma = nombre_arma;
         this.forma_pago = forma_pago;
-    }
+    } //Guardar la clase en una clase global Usuario logeado y de ahi guardo el correo (cuando me logueo)
 
     public String getCorreo_usuario() {
         return correo_usuario;

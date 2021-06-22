@@ -3,6 +3,7 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,10 +23,12 @@ public class TiendaActivity extends AppCompatActivity {
 
     TextView damagePistola;
     TextView damageLanzallamas;
-    TextView damageLaser;
+
+
+    String correo;
 
     List<Arma> listaArmas = new ArrayList<>();
-
+    Compra_arma compra_arma = new Compra_arma();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +38,17 @@ public class TiendaActivity extends AppCompatActivity {
 
         precioPistola = findViewById(R.id.precioPistolaid);
         precioLanzaLlamas = findViewById(R.id.precioLanzaLlamasid);
-        precioLaser = findViewById(R.id.PrecioLaserid);
+
 
         damagePistola = findViewById(R.id.damagePistola);
         damageLanzallamas = findViewById(R.id.damageLanzaLlamas);
-        damageLaser = findViewById(R.id.damageLaser);
 
-        Call<List<Arma>> call = ApiClient.getUserService().getListaArmas();
+
+        /*Bundle recibo = getIntent().getExtras();
+        correo = recibo.getString("correo");
+        precioLaser.setText(correo);
+
+        /* Call<List<Arma>> call = ApiClient.getUserService().getListaArmas();
         call.enqueue(new Callback<List<Arma>>() {
             @Override
             public void onResponse(Call<List<Arma>> call, Response<List<Arma>> response) {
@@ -55,11 +62,44 @@ public class TiendaActivity extends AppCompatActivity {
             public void onFailure(Call<List<Arma>> call, Throwable t) {
 
             }
-        });
+        }); */
+
+
 
     }
 
-    public void Tienda (View view) {
+    public void ComprarPistola (View view) {
 
+        Compra_arma compra_arma = new Compra_arma(correo,"pistol", "Débito");
+        Call<Compra_arma> call = ApiClient.getUserService().Comprar(compra_arma);
+        call.enqueue(new Callback<Compra_arma>() {
+            @Override
+            public void onResponse(Call<Compra_arma> call, Response<Compra_arma> response) {
+                Log.i("respuesta",response.toString());
+            }
+
+            @Override
+            public void onFailure(Call<Compra_arma> call, Throwable t) {
+
+            }
+        });
+
+
+    }
+
+    public void ComprarLanzabombas (View view) {
+        Compra_arma compra_arma = new Compra_arma(correo,"lanzabombas","Débito");
+        Call<Compra_arma> call = ApiClient.getUserService().Comprar(compra_arma);
+        call.enqueue(new Callback<Compra_arma>() {
+            @Override
+            public void onResponse(Call<Compra_arma> call, Response<Compra_arma> response) {
+                Log.i("respuesta", response.toString());
+            }
+
+            @Override
+            public void onFailure(Call<Compra_arma> call, Throwable t) {
+
+            }
+        });
     }
 }

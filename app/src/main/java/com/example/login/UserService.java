@@ -30,14 +30,17 @@ public interface UserService {
 
     ////////////////////////////////////////////////////////////////////7
 
-    @GET("store/")
+    @GET("store/") // Devuelve lista de armas
     Call<List<Arma>> getListaArmas ();
 
-    @POST("store/")
+    @POST("store/") //Comprar Arma
     Call<Compra_arma> Comprar (@Body Compra_arma compra_arma);
 
-    @GET("store/{correo}")
+    @GET("store/{correo}") //Devuelve todas las armas compradas
     Call<List<Compra_arma>> ListaComprada (@Path("correo") String correo);
+
+    @GET("user/adress/{correo}")
+    Call<Usuario> getUsuarioCorreo(@Path("correo")String correo);
 
 
 
